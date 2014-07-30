@@ -2070,7 +2070,11 @@ static int __do_proc_doulongvec_minmax(void *data, struct ctl_table *table, int 
 	int vleft, first = 1, err = 0;
 	unsigned long page = 0;
 	size_t left;
+<<<<<<< HEAD
 	char *kbuf = NULL;
+=======
+	char *kbuf  = NULL;
+>>>>>>> 2361f7d... toolchain: gcc: squashed fixes related to optimized toolchain
 
 	if (!data || !table->maxlen || !*lenp || (*ppos && !write)) {
 		*lenp = 0;

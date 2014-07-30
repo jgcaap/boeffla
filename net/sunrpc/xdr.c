@@ -918,7 +918,11 @@ int write_bytes_to_xdr_buf(struct xdr_buf *buf, unsigned int base, void *obj, un
 	int status;
 	subbuf.pages = 0;
 	subbuf.page_base = 0;
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 2361f7d... toolchain: gcc: squashed fixes related to optimized toolchain
 	status = xdr_buf_subsegment(buf, &subbuf, base, len);
 	if (status != 0)
 		return status;

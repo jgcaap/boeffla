@@ -12,6 +12,10 @@
  * GNU General Public License for more details.
  *
  */
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2361f7d... toolchain: gcc: squashed fixes related to optimized toolchain
 #include <linux/types.h>
 #include <linux/workqueue.h>
 #include <linux/debugfs.h>

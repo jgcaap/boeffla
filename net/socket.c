@@ -1380,7 +1380,11 @@ out_release:
 SYSCALL_DEFINE4(socketpair, int, family, int, type, int, protocol,
 		int __user *, usockvec)
 {
+<<<<<<< HEAD
 	struct socket *sock1 = NULL, *sock2 = NULL;
+=======
+	struct socket *sock1 = NULL, *sock2;
+>>>>>>> 2361f7d... toolchain: gcc: squashed fixes related to optimized toolchain
 	int fd1, fd2, err;
 	struct file *newfile1, *newfile2;
 	int flags;

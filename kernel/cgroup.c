@@ -2885,7 +2885,11 @@ int cgroup_scan_tasks(struct cgroup_scanner *scan)
 	struct ptr_heap tmp_heap;
 	struct ptr_heap *heap;
 	struct timespec latest_time = { 0, 0 };
+<<<<<<< HEAD
 	it.task = NULL;
+=======
+        it.task = NULL;
+>>>>>>> 2361f7d... toolchain: gcc: squashed fixes related to optimized toolchain
 
 	if (scan->heap) {
 		/* The caller supplied our heap and pre-allocated its memory */
@@ -3222,7 +3226,11 @@ int cgroupstats_build(struct cgroupstats *stats, struct dentry *dentry)
 	struct cgroup *cgrp;
 	struct cgroup_iter it;
 	struct task_struct *tsk;
+<<<<<<< HEAD
 	it.task = NULL;
+=======
+        it.task = NULL;
+>>>>>>> 2361f7d... toolchain: gcc: squashed fixes related to optimized toolchain
 
 	/*
 	 * Validate dentry by checking the superblock operations,
