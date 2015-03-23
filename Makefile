@@ -247,8 +247,8 @@ CONFIG_SHELL := $(shell if [ -x "$$BASH" ]; then echo $$BASH; \
 
 HOSTCC       = gcc
 HOSTCXX      = g++
-HOSTCFLAGS = -Wall -Wmissing-prototypes -Wstrict-prototypes -Ofast -fomit-frame-pointer -floop-flatten -floop-parallelize-all -ftree-loop-linear -floop-interchange -floop-strip-mine -floop-block -fgcse-las
-HOSTCXXFLAGS = -Ofast -floop-flatten -floop-parallelize-all -ftree-loop-linear -floop-interchange -floop-strip-mine -floop-block -fgcse-las
+HOSTCFLAGS = -Wall -Wmissing-prototypes -Wstrict-prototypes -O3 -fomit-frame-pointer -floop-flatten -floop-parallelize-all -ftree-loop-linear -floop-interchange -floop-strip-mine -floop-block -fgcse-las
+HOSTCXXFLAGS = -O3 -floop-flatten -floop-parallelize-all -ftree-loop-linear -floop-interchange -floop-strip-mine -floop-block -fgcse-las
 
 # Decide whether to build built-in, modular, or both.
 # Normally, just do built-in.
@@ -577,8 +577,10 @@ KBUILD_CFLAGS += $(call cc-option,-fno-delete-null-pointer-checks,)
 ifdef CONFIG_CC_OPTIMIZE_FOR_SIZE
 KBUILD_CFLAGS	+= -Os $(call cc-disable-warning,maybe-uninitialized,)
 else
-KBUILD_CFLAGS	+= -Ofast -fmodulo-sched -fmodulo-sched-allow-regmoves -fno-tree-vectorize
+KBUILD_CFLAGS	+= -O3 -fmodulo-sched -fmodulo-sched-allow-regmoves -fno-tree-vectorize
 endif
+
+KBUILD_CFLAGS	+= -s -pipe -fno-pic -mcpu=cortex-a15 -mtune=cortex-a15 -mfloat-abi=softfp -mfpu=vfpv4  -Wno-unused --param l1-cache-size=16 --param l1-cache-line-size=16 --param l2-cache-size=2048
 
 # Tell gcc to never replace conditional load with a non-conditional one
 KBUILD_CFLAGS += $(call cc-option,--param=allow-store-data-races=0)
