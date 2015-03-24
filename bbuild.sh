@@ -10,10 +10,10 @@
 # Parameters to be configured manually
 #######################################
 
-BOEFFLA_VERSION="3.0-test-CM12-bacon"
+BOEFFLA_VERSION="boeffla"
 EXTENDED_CMDLINE="androidboot.selinux=permissive"
 
-TOOLCHAIN="/opt/toolchains/arm-eabi-4.8/bin/arm-eabi-"
+TOOLCHAIN="/opt/toolchains/arm-eabi-4.9/bin/arm-eabi-"
 
 COMPILE_DTB="y"
 MODULES_IN_SYSTEM="y"
